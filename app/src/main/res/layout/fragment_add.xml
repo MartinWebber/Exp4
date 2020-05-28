@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8BC34A"
+    tools:context=".AddFragment" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/inname"
+            android:layout_weight='1'
+            android:text="Введите название">
+
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/incount"
+            android:layout_weight='1'
+            android:text="Введите количество">
+
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/inplace"
+            android:layout_weight='1'
+            android:text="Введите место хранения">
+
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/incost"
+            android:layout_weight='1'
+            android:text="Введите цену">
+
+        </TextView>
+        <TextView
+            android:id="@+id/inusers"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight='1'
+            android:text="Введите пользователя">
+
+        </TextView>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/addButton"
+            android:layout_weight="1"
+            android:text="Добавить элемент">
+
+        </Button>
+    </LinearLayout>
+</FrameLayout>
