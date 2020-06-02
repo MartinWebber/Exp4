@@ -13,6 +13,6 @@ public class Data {
     public int count, cost;
 
     public String getInsertData(){
-        return name + "," + count + "," + place + "," + cost + "," + users;
+        return "'" + name + "'," + count + ",'" + place + "'," + cost + ",'" + users + "'";
     }
 }

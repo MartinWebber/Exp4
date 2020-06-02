@@ -3,16 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFB300"
+    android:background="#C8FF00"
     tools:context=".ListFragment">
 
     <ListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#43A047"
         android:dividerHeight="30dp"
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
-        android:divider="#43A047"/>
+        android:divider="#00000000"/>
 </FrameLayout>

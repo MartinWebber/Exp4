@@ -42,11 +42,11 @@ public abstract class AsyncQueryData extends AsyncTask<String, Integer, Answer<D
         this.execute();
     }
 
-    public void insert(){
-        Data data = new Data("e",5,"E", 50, "Ee");
-        Call <Answer<Data>> call  = dataService.insert("sklad", "data", data.getInsertData());
+    public void insert(Data data){
+        call  = dataService.insert("sklad", "data", data.getInsertData());
         this.execute();
     }
+
     @Override
     protected Answer<Data> doInBackground(String... strings){
         Answer<Data> answer = new Answer<>();

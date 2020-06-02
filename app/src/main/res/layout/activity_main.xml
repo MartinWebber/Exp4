@@ -10,7 +10,7 @@
         android:id="@+id/tabBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#76FF03"
+        android:background="#00EE66"
         app:layout_constraintBottom_toTopOf="@+id/viewPager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class SearchFragment extends Fragment {
@@ -20,7 +21,7 @@ public class SearchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_search,container,false);
-        TextView textSearch = view.findViewById(R.id.textSearch);
+        EditText textSearch = view.findViewById(R.id.textSearch);
         Button buttonSearch = view.findViewById(R.id.buttonSearch);
         buttonSearch.setOnClickListener(new View.OnClickListener() {
             @Override

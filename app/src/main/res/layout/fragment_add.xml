@@ -3,58 +3,60 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8BC34A"
+    android:background="#00AA44"
     tools:context=".AddFragment" >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-        <TextView
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/inname"
             android:layout_weight='1'
-            android:text="Введите название">
+            android:hint="Введите название">
 
-        </TextView>
-        <TextView
+        </EditText>
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/incount"
             android:layout_weight='1'
-            android:text="Введите количество">
+            android:hint="Введите количество">
 
-        </TextView>
-        <TextView
+        </EditText>
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/inplace"
             android:layout_weight='1'
-            android:text="Введите место хранения">
+            android:hint="Введите место хранения">
 
-        </TextView>
-        <TextView
+        </EditText>
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/incost"
             android:layout_weight='1'
-            android:text="Введите цену">
+            android:hint="Введите цену">
 
-        </TextView>
-        <TextView
+        </EditText>
+        <EditText
             android:id="@+id/inusers"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight='1'
-            android:text="Введите пользователя">
+            android:hint="Введите пользователя">
 
-        </TextView>
+        </EditText>
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/addButton"
             android:layout_weight="1"
-            android:text="Добавить элемент">
+            android:text="Добавить элемент"
+            android:background="@drawable/corners">
 
         </Button>
     </LinearLayout>
