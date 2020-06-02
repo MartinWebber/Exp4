@@ -19,17 +19,23 @@ public class AddFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_add,container,false);
-        TextView textName = view.findViewById(R.id.inname);
-        TextView textCount = view.findViewById(R.id.incount);
-        TextView textPlace = view.findViewById(R.id.inplace);
-        TextView textCost = view.findViewById(R.id.incost);
-        TextView textUsers = view.findViewById(R.id.inusers);
+        final View view = inflater.inflate(R.layout.fragment_add,container,false);
+        final TextView textName = view.findViewById(R.id.inname);
+        final TextView textCount = view.findViewById(R.id.incount);
+        final TextView textPlace = view.findViewById(R.id.inplace);
+        final TextView textCost = view.findViewById(R.id.incost);
+        final TextView textUsers = view.findViewById(R.id.inusers);
         Button addButton = view.findViewById(R.id.addButton);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                AsyncQueryData asyncQueryUser = new AsyncQueryData() {
+                    @Override
+                    public void doInPostExecute(Answer<Data> answer) {
+                        Data data = new Data(textName.getText().toString(),Integer.valueOf(textCount.getText().toString()),textPlace.getText().toString(),Integer.valueOf(textCost.getText().toString()),textUsers.getText().toString());
+                    }
+                };
+                asyncQueryUser.insert();
             }
         });
         return view;

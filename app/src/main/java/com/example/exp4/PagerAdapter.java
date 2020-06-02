@@ -1,6 +1,5 @@
 package com.example.exp4;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -21,7 +20,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
             case 1:
                 return new AddFragment();
             case 2:
-                return new SettingsFragment();
+                return new SearchFragment();
             default:
                 return null;
         }

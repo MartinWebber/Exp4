@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:theme="@android:style/Theme.Black.NoTitleBar">
+    tools:context=".MainActivity">
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabBar"
@@ -32,10 +31,10 @@
             android:text="Add" />
 
         <com.google.android.material.tabs.TabItem
-            android:id="@+id/settings"
+            android:id="@+id/search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Settings" />
+            android:text="Search" />
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager

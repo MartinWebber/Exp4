@@ -16,11 +16,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TabLayout tabLayout = findViewById(R.id.tabBar);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabBar);
+        final ViewPager viewPager = findViewById(R.id.viewPager);
+        tabLayout.setupWithViewPager(viewPager);
         TabItem tabAdd = findViewById(R.id.add);
         TabItem tabList = findViewById(R.id.list);
-        TabItem tabSettings = findViewById(R.id.settings);
-        final ViewPager viewPager = findViewById(R.id.viewPager);
+        TabItem tabSearch = findViewById(R.id.search);
 
         PagerAdapter pagerAdapter = new
                 PagerAdapter(getSupportFragmentManager(),
