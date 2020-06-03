@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00AA44"
+    android:background="#64AA2B"
     tools:context=".AddFragment" >
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,7 +56,7 @@
             android:id="@+id/addButton"
             android:layout_weight="1"
             android:text="Добавить элемент"
-            android:background="@drawable/corners">
+            android:background="@drawable/item">
 
         </Button>
     </LinearLayout>

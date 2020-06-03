@@ -10,7 +10,7 @@
         android:id="@+id/tabBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#00EE66"
+        android:background="#439400"
         app:layout_constraintBottom_toTopOf="@+id/viewPager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,13 +28,13 @@
             android:id="@+id/add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add" />
+            android:text="Add"/>
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Search" />
+            android:text="Search"/>
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager

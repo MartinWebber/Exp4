@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/corners"
+    android:background="@drawable/item"
     android:orientation="horizontal">
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +15,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_weight="1"
-            android:textStyle="bold">
+            android:textStyle="bold"
+            android:textSize="20dp">
 
         </TextView>
         <TextView
@@ -24,7 +25,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_weight="1"
-            android:text="Место хранения">
+            android:text="Место хранения"
+            android:textSize="20dp">
 
         </TextView>
         <TextView
@@ -33,7 +35,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_weight="1"
-            android:text="Пользователи">
+            android:text="Пользователи"
+            android:textSize="20dp">
 
         </TextView>
     </LinearLayout>
@@ -49,7 +52,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_weight="1"
-            android:text="Количество">
+            android:text="Количество"
+            android:textSize="20dp">
 
         </TextView>
         <TextView
@@ -58,7 +62,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_weight="1"
-            android:text="Цена">
+            android:text="Цена"
+            android:textSize="20dp">
 
         </TextView>
     </LinearLayout>
@@ -66,12 +71,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:id="@+id/deleteButton"
         android:layout_gravity="center_vertical"
         android:gravity="center"
         android:text="Delete"
         android:textStyle="bold"
         android:textColor="#CC5555"
-        android:background="@null">
+        android:background="@null"
+        android:textSize="30dp">
 
     </Button>
 </LinearLayout>

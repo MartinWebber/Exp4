@@ -26,8 +26,16 @@ public abstract class AsyncQueryData extends AsyncTask<String, Integer, Answer<D
         Call<Answer<Data>> insert(
                 @Path("folder") String folder,
                 @Query("table") String table,
-                @Query("insert_data") String insertData
-        );
+                @Query("insert_data") String insertData);
+        @GET("/{folder}/delete.php")
+        Call<Answer<Data>> delete(
+                @Path("folder") String folder,
+                @Query("table") String table);
+        @GET("/{folder}/search.php")
+        Call<Answer<Data>> search(
+                @Path("folder") String folder,
+                @Query("table") String table,
+                @Query("search") String searchData);
     }
 
     AsyncQueryData(){
@@ -46,6 +54,15 @@ public abstract class AsyncQueryData extends AsyncTask<String, Integer, Answer<D
         call  = dataService.insert("sklad", "data", data.getInsertData());
         this.execute();
     }
+    public void delete(){
+        call  = dataService.delete("sklad", "data");
+        this.execute();
+    }
+    public void search(String search){
+        call  = dataService.search("sklad", "data", search);
+        this.execute();
+    }
+
 
     @Override
     protected Answer<Data> doInBackground(String... strings){

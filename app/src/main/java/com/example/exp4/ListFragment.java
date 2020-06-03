@@ -8,8 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class ListFragment extends Fragment {
+
+    public ArrayList<Object> arr;
 
     public ListFragment() {
 
@@ -19,14 +24,15 @@ public class ListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
     View view = inflater.inflate(R.layout.fragment_list,container,false);
-    objAdapter adapter = new objAdapter(view.getContext(), makeObj());
+    final objAdapter adapter = new objAdapter(view.getContext(), makeObj());
     ListView lv = (ListView) view.findViewById(R.id.listview);
     lv.setAdapter(adapter);
+
     return view;
     }
 
-    Object[] makeObj() {
-        Object[] arr = new Object[5];
+    ArrayList<Object> makeObj() {
+        /*Object[] arr = new Object[5];
         String[] names = {"A", "B", "C", "D", "E"};
         int[] counts = {1,2,3,4,5};
         String[] places = {"a","b","c","d","e"};
@@ -34,14 +40,19 @@ public class ListFragment extends Fragment {
         String[] users = {"Aa","Bb","Cc","Dd","Ee"};
 
         for (int i = 0; i < arr.length; i++) {
-            Object obj = new Object();
-            obj.name = names[i];
-            obj.count = counts[i];
-            obj.place = places[i];
-            obj.cost = costs[i];
-            obj.users = users[i];
-            arr[i] = obj;
+            arr[i] = new Object(names[i], counts[i], places[i], costs[i], users[i]);
         }
+        return arr;*/
+        AsyncQueryData asyncQueryData = new AsyncQueryData() {
+            @Override
+            public void doInPostExecute(Answer<Data> answer) {
+                for(Data u:answer.getData()){
+                    Object object = new Object(u.name, u.count, u.place, u.cost, u.users);
+                    arr.add(object);
+                }
+            }
+        };
+        asyncQueryData.select();
         return arr;
     }
 }

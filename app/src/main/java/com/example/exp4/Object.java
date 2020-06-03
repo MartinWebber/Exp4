@@ -7,6 +7,14 @@ public class Object {
     protected int cost;
     protected String users;
 
+    Object(String name, int count, String place, int cost, String users){
+        this.name = name;
+        this.count = count;
+        this.place = place;
+        this.cost = cost;
+        this.users = users;
+    }
+
     public String getName() {
         return name;
     }
