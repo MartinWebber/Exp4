@@ -30,7 +30,8 @@ public abstract class AsyncQueryData extends AsyncTask<String, Integer, Answer<D
         @GET("/{folder}/delete.php")
         Call<Answer<Data>> delete(
                 @Path("folder") String folder,
-                @Query("table") String table);
+                @Query("table") String table,
+                @Query("id") Integer id);
         @GET("/{folder}/search.php")
         Call<Answer<Data>> search(
                 @Path("folder") String folder,
@@ -54,8 +55,8 @@ public abstract class AsyncQueryData extends AsyncTask<String, Integer, Answer<D
         call  = dataService.insert("sklad", "data", data.getInsertData());
         this.execute();
     }
-    public void delete(){
-        call  = dataService.delete("sklad", "data");
+    public void delete(int id){
+        call  = dataService.delete("sklad", "data", id);
         this.execute();
     }
     public void search(String search){

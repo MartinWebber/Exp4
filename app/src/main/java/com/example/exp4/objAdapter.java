@@ -12,16 +12,19 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class objAdapter extends ArrayAdapter<Object> {
+public class objAdapter extends ArrayAdapter<Data> {
 
-    public objAdapter(Context context, ArrayList<Object> arr) {
+    //private ArrayList<Data> arr;
+
+    public objAdapter(Context context, ArrayList<Data> arr) {
         super(context, R.layout.adapter_item, arr);
+        //this.arr = arr;
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
 
-        final Object obj = getItem(position);
+        final Data obj = getItem(position);
 
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.adapter_item, null);
@@ -36,13 +39,14 @@ public class objAdapter extends ArrayAdapter<Object> {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                 //arr.remove(position);
                 AsyncQueryData asyncQueryData = new AsyncQueryData() {
                     @Override
                     public void doInPostExecute(Answer<Data> answer) {
 
                     }
                 };
-                asyncQueryData.delete();
+                asyncQueryData.delete(obj.id);
             }
         });
         return convertView;

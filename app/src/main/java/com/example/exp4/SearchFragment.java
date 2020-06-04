@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class SearchFragment extends Fragment {
 
     View view;
-    public ArrayList<Object> arr = new ArrayList<Object>();;
+    public ArrayList<Data> arr;
 
     public SearchFragment() {
 
@@ -37,7 +37,12 @@ public class SearchFragment extends Fragment {
                 AsyncQueryData asyncQueryData = new AsyncQueryData() {
                     @Override
                     public void doInPostExecute(Answer<Data> answer) {
-                        objAdapter adapter = new objAdapter(view.getContext(), makeObj());
+                        arr = new ArrayList<Data>();
+                        for(Data u:answer.getData()){
+                            Data object = new Data(u.name, u.count, u.place, u.cost, u.users);
+                            arr.add(object);
+                        }
+                        objAdapter adapter = new objAdapter(view.getContext(), arr);
                         ListView lv = (ListView) view.findViewById(R.id.searchList);
                         lv.setAdapter(adapter);
                     }
@@ -46,29 +51,5 @@ public class SearchFragment extends Fragment {
             }
         });
         return view;
-    }
-    ArrayList<Object> makeObj() {
-        /*Object[] arr = new Object[5];
-        String[] names = {"A", "B", "C", "D", "E"};
-        int[] counts = {1,2,3,4,5};
-        String[] places = {"a","b","c","d","e"};
-        int[] costs = {10,20,30,40,50};
-        String[] users = {"Aa","Bb","Cc","Dd","Ee"};
-
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = new Object(names[i], counts[i], places[i], costs[i], users[i]);
-        }
-        return arr;*/
-        AsyncQueryData asyncQueryData = new AsyncQueryData() {
-            @Override
-            public void doInPostExecute(Answer<Data> answer) {
-                for(Data u:answer.getData()){
-                    Object object = new Object(u.name, u.count, u.place, u.cost, u.users);
-                    arr.add(object);
-                }
-            }
-        };
-        asyncQueryData.select();
-        return arr;
     }
 }
