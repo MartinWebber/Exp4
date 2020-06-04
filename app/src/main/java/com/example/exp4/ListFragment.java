@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 public class ListFragment extends Fragment {
 
+    View view;
     public ArrayList<Object> arr;
 
     public ListFragment() {
@@ -23,11 +24,21 @@ public class ListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-    View view = inflater.inflate(R.layout.fragment_list,container,false);
-    final objAdapter adapter = new objAdapter(view.getContext(), makeObj());
-    ListView lv = (ListView) view.findViewById(R.id.listview);
-    lv.setAdapter(adapter);
-
+    view = inflater.inflate(R.layout.fragment_list,container,false);
+        AsyncQueryData asyncQueryData = new AsyncQueryData() {
+            @Override
+            public void doInPostExecute(Answer<Data> answer) {
+                arr = new ArrayList<Object>();
+                for(Data u:answer.getData()){
+                    Object object = new Object(u.name, u.count, u.place, u.cost, u.users);
+                    arr.add(object);
+                }
+                objAdapter adapter = new objAdapter(view.getContext(), arr);
+                ListView lv = (ListView) view.findViewById(R.id.listview);
+                lv.setAdapter(adapter);
+            }
+        };
+        asyncQueryData.select();
     return view;
     }
 
@@ -43,16 +54,6 @@ public class ListFragment extends Fragment {
             arr[i] = new Object(names[i], counts[i], places[i], costs[i], users[i]);
         }
         return arr;*/
-        AsyncQueryData asyncQueryData = new AsyncQueryData() {
-            @Override
-            public void doInPostExecute(Answer<Data> answer) {
-                for(Data u:answer.getData()){
-                    Object object = new Object(u.name, u.count, u.place, u.cost, u.users);
-                    arr.add(object);
-                }
-            }
-        };
-        asyncQueryData.select();
         return arr;
     }
 }

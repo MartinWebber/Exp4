@@ -18,7 +18,8 @@ import java.util.ArrayList;
 
 public class SearchFragment extends Fragment {
 
-    public ArrayList<Object> arr;
+    View view;
+    public ArrayList<Object> arr = new ArrayList<Object>();;
 
     public SearchFragment() {
 
@@ -28,9 +29,6 @@ public class SearchFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_search,container,false);
-        final objAdapter adapter = new objAdapter(view.getContext(), makeObj());
-        ListView lv = (ListView) view.findViewById(R.id.searchList);
-        lv.setAdapter(adapter);
         final EditText textSearch = view.findViewById(R.id.textSearch);
         Button buttonSearch = view.findViewById(R.id.buttonSearch);
         buttonSearch.setOnClickListener(new View.OnClickListener() {
@@ -39,7 +37,9 @@ public class SearchFragment extends Fragment {
                 AsyncQueryData asyncQueryData = new AsyncQueryData() {
                     @Override
                     public void doInPostExecute(Answer<Data> answer) {
-
+                        objAdapter adapter = new objAdapter(view.getContext(), makeObj());
+                        ListView lv = (ListView) view.findViewById(R.id.searchList);
+                        lv.setAdapter(adapter);
                     }
                 };
                 asyncQueryData.search(textSearch.getText().toString());
