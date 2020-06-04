@@ -32,7 +32,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:id="@+id/searchList">
+            android:id="@+id/searchList"
+            android:layout_marginTop="20dp"
+            android:divider="#00000000"
+            android:dividerHeight="30dp">
 
         </ListView>
     </LinearLayout>
