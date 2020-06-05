@@ -1,13 +1,15 @@
 package com.example.exp4;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
+        import androidx.appcompat.app.AppCompatActivity;
+        import androidx.viewpager.widget.ViewPager;
 
-import android.os.Bundle;
-import android.widget.ListView;
+        import android.app.ActionBar;
+        import android.os.Bundle;
+        import android.util.Log;
+        import android.widget.ListView;
 
-import com.google.android.material.tabs.TabItem;
-import com.google.android.material.tabs.TabLayout;
+        import com.google.android.material.tabs.TabItem;
+        import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,18 +18,35 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabBar);
+        final TabLayout tabLayout = (TabLayout) findViewById(R.id.tabBar);
         final ViewPager viewPager = findViewById(R.id.viewPager);
-        tabLayout.setupWithViewPager(viewPager);
+
         TabItem tabAdd = findViewById(R.id.add);
         TabItem tabList = findViewById(R.id.list);
         TabItem tabSearch = findViewById(R.id.search);
 
         PagerAdapter pagerAdapter = new
                 PagerAdapter(getSupportFragmentManager(),
-                    tabLayout.getTabCount());
+                tabLayout.getTabCount());
 
         viewPager.setAdapter(pagerAdapter);
+
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                tabLayout.selectTab(tabLayout.getTabAt(position));
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
