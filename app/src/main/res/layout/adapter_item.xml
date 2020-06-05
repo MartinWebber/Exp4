@@ -16,7 +16,8 @@
             android:layout_margin="20dp"
             android:layout_weight="1"
             android:textStyle="bold"
-            android:textSize="20dp">
+            android:textSize="20dp"
+            android:textColor="@color/textColor">
 
         </TextView>
         <TextView
@@ -25,8 +26,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_weight="1"
-            android:text="Место хранения"
-            android:textSize="20dp">
+            android:textSize="20dp"
+            android:textColor="@color/textColor">
 
         </TextView>
         <TextView
@@ -35,8 +36,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_weight="1"
-            android:text="Пользователи"
-            android:textSize="20dp">
+            android:textSize="20dp"
+            android:textColor="@color/textColor">
 
         </TextView>
     </LinearLayout>
@@ -52,8 +53,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_weight="1"
-            android:text="Количество"
-            android:textSize="20dp">
+            android:textSize="20dp"
+            android:textColor="@color/textColor">
 
         </TextView>
         <TextView
@@ -62,8 +63,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:layout_weight="1"
-            android:text="Цена"
-            android:textSize="20dp">
+            android:textSize="20dp"
+            android:textColor="@color/textColor">
 
         </TextView>
     </LinearLayout>
@@ -76,7 +77,7 @@
         android:gravity="center"
         android:text="Delete"
         android:textStyle="bold"
-        android:textColor="#CC5555"
+        android:textColor="@color/textDeleteColor"
         android:background="@null"
         android:textSize="30dp">
 

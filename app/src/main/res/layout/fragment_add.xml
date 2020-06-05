@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#64AA2B"
+    android:background="@color/backgroundColor"
     tools:context=".AddFragment" >
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +15,8 @@
             android:layout_height="match_parent"
             android:id="@+id/inname"
             android:layout_weight='1'
-            android:hint="Введите название">
+            android:hint="Введите название"
+            android:textColor="@color/textColor">
 
         </EditText>
         <EditText
@@ -23,7 +24,8 @@
             android:layout_height="match_parent"
             android:id="@+id/incount"
             android:layout_weight='1'
-            android:hint="Введите количество">
+            android:hint="Введите количество"
+            android:textColor="@color/textColor">
 
         </EditText>
         <EditText
@@ -31,7 +33,8 @@
             android:layout_height="match_parent"
             android:id="@+id/inplace"
             android:layout_weight='1'
-            android:hint="Введите место хранения">
+            android:hint="Введите место хранения"
+            android:textColor="@color/textColor">
 
         </EditText>
         <EditText
@@ -39,7 +42,8 @@
             android:layout_height="match_parent"
             android:id="@+id/incost"
             android:layout_weight='1'
-            android:hint="Введите цену">
+            android:hint="Введите цену"
+            android:textColor="@color/textColor">
 
         </EditText>
         <EditText
@@ -47,7 +51,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight='1'
-            android:hint="Введите пользователя">
+            android:hint="Введите пользователя"
+            android:textColor="@color/textColor">
 
         </EditText>
         <Button
@@ -56,7 +61,8 @@
             android:id="@+id/addButton"
             android:layout_weight="1"
             android:text="Добавить элемент"
-            android:background="@drawable/item">
+            android:background="@drawable/button"
+            android:textColor="@color/textColor">
 
         </Button>
     </LinearLayout>

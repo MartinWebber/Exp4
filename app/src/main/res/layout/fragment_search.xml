@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#64AA2B"
+    android:background="@color/backgroundColor"
     tools:context=".SearchFragment">
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +15,9 @@
             android:layout_height="match_parent"
             android:id="@+id/textSearch"
             android:layout_weight="5"
-            android:hint="Поиск">
+            android:hint="Поиск"
+            android:textSize="20dp"
+            android:textColor="@color/textColor">
 
         </EditText>
 
@@ -25,7 +27,9 @@
             android:id="@+id/buttonSearch"
             android:layout_weight="5"
             android:text="Найти"
-            android:background="@drawable/item">
+            android:textSize="20dp"
+            android:textColor="@color/textColor"
+            android:background="@drawable/button">
 
         </Button>
         <ListView
@@ -33,9 +37,10 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:id="@+id/searchList"
-            android:layout_marginTop="20dp"
-            android:divider="#00000000"
-            android:dividerHeight="30dp">
+            android:layout_margin="30dp"
+            android:divider="@color/dividerColor"
+            android:dividerHeight="30dp"
+            android:scrollbarStyle="outsideOverlay">
 
         </ListView>
     </LinearLayout>

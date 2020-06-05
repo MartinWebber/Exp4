@@ -3,17 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#64AA2B"
+    android:background="@color/backgroundColor"
     tools:context=".ListFragment">
 
     <ListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="#00000000"
+        android:divider="@color/dividerColor"
         android:dividerHeight="30dp"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:scrollbarSize="10dp"
-        android:scrollbarStyle="outsideInset"/>
+        android:layout_margin="30dp"
+        android:scrollbarStyle="outsideOverlay"/>
 </FrameLayout>

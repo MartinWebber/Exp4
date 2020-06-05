@@ -10,13 +10,13 @@
         android:id="@+id/tabBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#439400"
+        android:background="@color/tabColor"
         app:layout_constraintBottom_toTopOf="@+id/viewPager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:tabIndicatorFullWidth="true"
-        app:tabTextColor="#000000">
+        app:tabTextColor="@color/textColor">
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/list"
