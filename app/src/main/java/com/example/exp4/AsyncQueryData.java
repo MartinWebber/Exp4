@@ -37,6 +37,11 @@ public abstract class AsyncQueryData extends AsyncTask<String, Integer, Answer<D
                 @Path("folder") String folder,
                 @Query("table") String table,
                 @Query("search") String searchData);
+        @GET("/{folder}/update.php")
+        Call<Answer<Data>> update(
+                @Path("folder") String folder,
+                @Query("table") String table,
+                @Query("update_data") Data updateData);
     }
 
     AsyncQueryData(){
@@ -61,6 +66,10 @@ public abstract class AsyncQueryData extends AsyncTask<String, Integer, Answer<D
     }
     public void search(String search){
         call  = dataService.search("sklad", "data", search);
+        this.execute();
+    }
+    public void update(Data updateData){
+        call  = dataService.update("sklad", "data", updateData);
         this.execute();
     }
 

@@ -42,7 +42,9 @@ public class AddFragment extends Fragment {
                         textCost.setText("");
                         textUsers.setText("");
                         Activity activity = getActivity();
-                        Toast.makeText(activity, "Done!", Toast.LENGTH_SHORT).show();
+                        Toast toast = Toast.makeText(activity, "Successfully deleted!", Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
+                        toast.show();
                     }
                 };
                 Data data = new Data(textName.getText().toString(),Integer.valueOf(textCount.getText().toString()),textPlace.getText().toString(),Integer.valueOf(textCost.getText().toString()),textUsers.getText().toString());

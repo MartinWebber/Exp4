@@ -2,6 +2,7 @@ package com.example.exp4;
 
 import android.app.Activity;
 import android.content.Context;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,7 +44,9 @@ public class objAdapter extends ArrayAdapter<Data> {
                 AsyncQueryData asyncQueryData = new AsyncQueryData() {
                     @Override
                     public void doInPostExecute(Answer<Data> answer) {
-
+                        Toast toast = Toast.makeText(getContext(), "Successfully deleted!", Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
+                        toast.show();
                     }
                 };
                 asyncQueryData.delete(obj.id);

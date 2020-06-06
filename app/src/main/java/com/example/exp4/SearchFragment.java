@@ -39,7 +39,7 @@ public class SearchFragment extends Fragment {
                     public void doInPostExecute(Answer<Data> answer) {
                         arr = new ArrayList<Data>();
                         for(Data u:answer.getData()){
-                            Data object = new Data(u.name, u.count, u.place, u.cost, u.users);
+                            Data object = new Data(u.id, u.name, u.count, u.place, u.cost, u.users);
                             arr.add(object);
                         }
                         objAdapter adapter = new objAdapter(view.getContext(), arr);
