@@ -33,22 +33,29 @@ public class AddFragment extends Fragment {
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AsyncQueryData asyncQueryData = new AsyncQueryData() {
-                    @Override
-                    public void doInPostExecute(Answer<Data> answer) {
-                        textName.setText("");
-                        textCount.setText("");
-                        textPlace.setText("");
-                        textCost.setText("");
-                        textUsers.setText("");
-                        Activity activity = getActivity();
-                        Toast toast = Toast.makeText(activity, "Successfully deleted!", Toast.LENGTH_SHORT);
-                        toast.setGravity(Gravity.CENTER, 0, 0);
-                        toast.show();
-                    }
-                };
-                Data data = new Data(textName.getText().toString(),Integer.valueOf(textCount.getText().toString()),textPlace.getText().toString(),Integer.valueOf(textCost.getText().toString()),textUsers.getText().toString());
-                asyncQueryData.insert(data);
+                try{
+                    AsyncQueryData asyncQueryData = new AsyncQueryData() {
+                        @Override
+                        public void doInPostExecute(Answer<Data> answer) {
+                            textName.setText("");
+                            textCount.setText("");
+                            textPlace.setText("");
+                            textCost.setText("");
+                            textUsers.setText("");
+                            Activity activity = getActivity();
+                            Toast toast = Toast.makeText(activity, "Successfully added!", Toast.LENGTH_SHORT);
+                            toast.setGravity(Gravity.CENTER, 0, 0);
+                            toast.show();
+                        }
+                    };
+                    Data data = new Data(textName.getText().toString(),Integer.valueOf(textCount.getText().toString()),textPlace.getText().toString(),Integer.valueOf(textCost.getText().toString()),textUsers.getText().toString());
+                    asyncQueryData.insert(data);
+                } catch (NumberFormatException e) {
+                    Activity activity = getActivity();
+                    Toast toast = Toast.makeText(activity, "Error", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
+                }
             }
         });
         return view;
