@@ -43,7 +43,7 @@ public class AddFragment extends Fragment {
                             textCost.setText("");
                             textUsers.setText("");
                             Activity activity = getActivity();
-                            Toast toast = Toast.makeText(activity, "Successfully added!", Toast.LENGTH_SHORT);
+                            Toast toast = Toast.makeText(activity, "Успешно добавлено!", Toast.LENGTH_SHORT);
                             toast.setGravity(Gravity.CENTER, 0, 0);
                             toast.show();
                         }
@@ -52,7 +52,7 @@ public class AddFragment extends Fragment {
                     asyncQueryData.insert(data);
                 } catch (NumberFormatException e) {
                     Activity activity = getActivity();
-                    Toast toast = Toast.makeText(activity, "Error", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(activity, "Ошибка", Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER, 0, 0);
                     toast.show();
                 }

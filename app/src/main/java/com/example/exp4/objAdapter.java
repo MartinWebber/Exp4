@@ -1,7 +1,11 @@
 package com.example.exp4;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +14,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 
 import java.util.ArrayList;
 
@@ -40,11 +48,10 @@ public class objAdapter extends ArrayAdapter<Data> {
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 //arr.remove(position);
                 AsyncQueryData asyncQueryData = new AsyncQueryData() {
                     @Override
                     public void doInPostExecute(Answer<Data> answer) {
-                        Toast toast = Toast.makeText(getContext(), "Successfully deleted!", Toast.LENGTH_SHORT);
+                        Toast toast = Toast.makeText(getContext(), "Успешно удалено!", Toast.LENGTH_SHORT);
                         toast.setGravity(Gravity.CENTER, 0, 0);
                         toast.show();
                     }

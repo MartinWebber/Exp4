@@ -22,19 +22,19 @@
             android:id="@+id/list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="List"/>
+            android:text="Список"/>
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Add"/>
+            android:text="Добавить"/>
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Search"/>
+            android:text="Найти"/>
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager
