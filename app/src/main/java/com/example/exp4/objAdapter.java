@@ -39,11 +39,11 @@ public class objAdapter extends ArrayAdapter<Data> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.adapter_item, null);
         }
 
-        ((TextView) convertView.findViewById(R.id.name)).setText(obj.name);
-        ((TextView) convertView.findViewById(R.id.count)).setText(String.valueOf(obj.count));
-        ((TextView) convertView.findViewById(R.id.place)).setText(obj.place);
-        ((TextView) convertView.findViewById(R.id.cost)).setText(String.valueOf(obj.cost));
-        ((TextView) convertView.findViewById(R.id.users)).setText(obj.users);
+        ((TextView) convertView.findViewById(R.id.name)).setText("Название: " + obj.name);
+        ((TextView) convertView.findViewById(R.id.count)).setText("Количество: " + String.valueOf(obj.count));
+        ((TextView) convertView.findViewById(R.id.place)).setText("Место хранения: " + obj.place);
+        ((TextView) convertView.findViewById(R.id.cost)).setText("Цена: " + String.valueOf(obj.cost) + " руб.");
+        ((TextView) convertView.findViewById(R.id.users)).setText("Пользователи: " + obj.users);
         Button deleteButton = convertView.findViewById(R.id.deleteButton);
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
